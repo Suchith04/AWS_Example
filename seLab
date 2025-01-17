@@ -98,6 +98,7 @@ sudo apt install -y docker.io
 sudo apt install git 
 sudo apt install nano 
 
+/usr/share/nginx/html/
 
 version: '3.8'  # Docker Compose file format version
 
