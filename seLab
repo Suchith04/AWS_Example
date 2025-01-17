@@ -1,0 +1,109 @@
+Maven JAVA :- 
+file -> new -> other -> maven project -> org.apache.maven
+quickstart with 1.4 version 
+
+RUN THE MAVEN BUILD CYCLE
+Run as 
+1.Maven Clean 
+2.Maven Install
+3.Maven Test
+4.Maven Buid (goals = "clean install test")
+5. .jar is created in target folder
+6. Push Into GitHub
+
+Maven Web :- 
+
+maven-archetype-webapp 1.4 version
+
+rightclick on new project and select maven and select add dependency
+or else 
+open google and search "servlet api maven dependency"
+scroll down and find 2.5 version and click on it
+copy dependency tag and paste it int pom.xml
+remove the <scope> 
+
+Run The MAVEN BUild Cycle 
+Run as 
+clean 
+install
+test 
+build(goals ="clean install test")
+
+git remote add origin "repo link"
+git push -u origin main
+git checkout -b main ( create a new branch called main)
+git branch -d master (delete master branch)
+
+
+DOCKER - 4 types 
+
+1.Docker CLI COmmands 
+
+docker images -- display available images
+docker run image_name  --  run the image
+docker ps -a 
+docker run --name set_name -d redis -- run the image also giving name
+docker exec -it name redis-cli ( redis has redis-cli)
+        set name "name"
+        get "name"
+docker stop cntr_id
+
+2.Docker File 
+
+docker build -t newredis(name) .  -- docker image using dockerFile
+docker commit cont_id  suchith04/name  -- creates a custom image with container stated and names it suchit04/name
+docker login -u username -p pass
+docker push username/fileName
+
+
+3.Ubuntu (modify and Push) 
+
+docker run -it --name myubuntu -d ubuntu
+apt update 
+apt install git -y
+
+4.Create And Push Docker File Image
+calculator.js program 
+
+5.Docker Compose (docker-compose.yaml)
+docker-compose up -d 
+docker-compose start
+docker-compose stop
+docker compose down
+
+
+6.MULTIPLE CONTAINERS 
+minikube start 
+kubectl create deployment mynginx --image=ngnix
+kubectl get deployments (or) get pods
+kubectl expose deployement mynginx --type=NodePort --port=80 --target-port=80 
+kubectl scale deployment mynginx --replicas=4
+
+port forwarding :- kubectl port-forward svc/mynginix 8081:80
+
+
+6. Nagios Continuous Monitoring 
+
+
+docker pull jasonrivers/nagios:latest
+docker run --name mynagios -d -p 8888:80 jasonrivers/nagios:latest
+
+
+
+AWS -> EC2 
+
+sudo apt update
+sudo apt -get install docker.io 
+sudo apt install -y docker.io
+sudo apt install git 
+sudo apt install nano 
+
+
+
+
+
+
+
+
+
+
