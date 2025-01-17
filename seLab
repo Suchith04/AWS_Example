@@ -124,7 +124,24 @@ services:
       MYSQL_PASSWORD: wordpress
 
 
-
+pipeline{
+        agent any
+        tools{
+                maven "MAVEN_HOME"        
+       }
+        stages{
+                stage("Git repo and Clean"){
+                        steps{
+                          //bat "rmdir sampleMavenWeb"
+                          bat "git clone https://github.com/budarajumadhurika/SampleMavenJavaProject.git"
+                          bat "mvn clean -f sampleMavenJavaProject"
+                        }
+                }
+                stage("Install")
+                stage("Test")
+                stage("package")
+        }
+}
 
 
 
