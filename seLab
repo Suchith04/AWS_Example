@@ -99,6 +99,29 @@ sudo apt install git
 sudo apt install nano 
 
 
+version: '3.8'  # Docker Compose file format version
+
+services:
+  wordpress:  # WordPress service
+    image: wordpress:latest
+    ports:
+      - "6060:80"  # Map port 80 of the container to port 6060 of the host
+    environment:
+      WORDPRESS_DB_HOST: db:3306  # Database host
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      - db  # Ensures the db service starts first
+
+  db:  # MySQL service
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
 
 
 
