@@ -1,0 +1,14 @@
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+
+sudo docker build -t my-node-app .
+sudo docker run -d -p 3000:3000 my-node-app
